@@ -6,7 +6,7 @@ const gigs = await res.json()
 
 const now = new Date()
 
-const future = gigs.filter(g=> new Date(g.date) >= now)
+const future = gigs.filter(g => new Date(g.date) >= now)
 future.sort((a,b)=> new Date(a.date)-new Date(b.date))
 
 const list = document.getElementById("giglist")
@@ -82,9 +82,7 @@ photos.forEach(p=>{
 const img = document.createElement("img")
 img.src="photos/"+p
 
-img.onclick = () => {
-openLightbox("photos/"+p)
-}
+img.onclick = () => openLightbox("photos/"+p)
 
 grid.appendChild(img)
 
@@ -102,6 +100,8 @@ lightbox.style.display="flex"
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
 document.querySelector(".lightbox-close").onclick = () => {
 document.getElementById("lightbox").style.display="none"
 }
@@ -113,8 +113,6 @@ e.target.style.display="none"
 }
 
 })
-
-}
 
 loadGigs()
 loadPhotos()
