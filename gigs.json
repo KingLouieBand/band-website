@@ -1,17 +1,6 @@
+
 [
-  {
-    "date": "2026-04-12",
-    "venue": "The Red Lion",
-    "city": "Southampton"
-  },
-  {
-    "date": "2026-04-26",
-    "venue": "The Kings Arms",
-    "city": "Winchester"
-  },
-  {
-    "date": "2026-05-10",
-    "venue": "The Anchor",
-    "city": "Portsmouth"
-  }
+{"date":"2026-04-12","venue":"The Red Lion","city":"Southampton"},
+{"date":"2026-04-26","venue":"The Kings Arms","city":"Winchester"},
+{"date":"2026-05-10","venue":"The Anchor","city":"Portsmouth"}
 ]

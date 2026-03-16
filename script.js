@@ -33,12 +33,40 @@ const next = future[0]
 document.getElementById("nextGigBar").innerText =
 "NEXT GIG: "+next.date+" – "+next.venue+" ("+next.city+")"
 
+startCountdown(new Date(next.date))
+
 }else{
 
 document.getElementById("nextGigBar").innerText =
 "No upcoming gigs announced yet"
 
 }
+
+}
+
+function startCountdown(target){
+
+const el = document.getElementById("countdown")
+
+function update(){
+
+const now = new Date().getTime()
+const distance = target - now
+
+if(distance < 0){
+el.innerHTML = ""
+return
+}
+
+const days = Math.floor(distance/(1000*60*60*24))
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+
+el.innerHTML = "Next gig in "+days+" days "+hours+" hrs"
+
+}
+
+setInterval(update,1000)
+update()
 
 }
 
@@ -53,7 +81,6 @@ photos.forEach(p=>{
 
 const img = document.createElement("img")
 img.src="photos/"+p
-
 grid.appendChild(img)
 
 })
