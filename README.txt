@@ -1,13 +1,20 @@
 
-KING LOUIE BAND WEBSITE
+KING LOUIE WEBSITE
 
-1. Put your logo in images/logo.png
-2. Put the monkey graphic in images/monkey.png
-3. Upload everything to your GitHub repo
-4. Enable GitHub Pages
+VIDEOS
+The YouTube videos are already embedded.
 
-To update gigs:
+ADD PHOTOS
+1. Put images into /photos
+2. Add filenames to photos.json
+
+Example:
+
+"gig1.jpg",
+"gig2.jpg"
+
+ADD GIGS
 Edit gigs.json
 
-To add YouTube videos:
-Replace VIDEOID1/2/3 in index.html with the ID from YouTube URLs.
+EMAIL
+Contact email opens mail app using mailto link.

@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>King Louie | Pub Rock</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +13,7 @@
 <div class="navlinks">
 <a href="#gigs">Gigs</a>
 <a href="#videos">Videos</a>
+<a href="#gallery">Photos</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -21,11 +21,8 @@
 <section class="hero">
 
 <div class="hero-left">
-
 <img src="images/logo.png" class="hero-logo">
-
 <p class="hero-tag">Pub Rock • Hampshire</p>
-
 </div>
 
 <img src="images/monkey.png" class="hero-monkey">
@@ -34,25 +31,34 @@
 
 
 <section id="gigs" class="section">
-
 <h2>Upcoming Gigs</h2>
-
 <ul id="giglist"></ul>
-
 </section>
 
 
 <section id="videos" class="section">
-
 <h2>Videos</h2>
 
 <div class="video-grid">
 
-<iframe src="https://www.youtube.com/watch?v=l2LRv33g_PA"></iframe>
-<iframe src="https://www.youtube.com/watch?v=exjbLTjxL2c"></iframe>
-<iframe src="https://www.youtube.com/watch?v=fxFY7ANLA_0"></iframe>
+<iframe src="https://www.youtube.com/embed/l2LRv33g_PA" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/exjbLTjxL2c" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/fxFY7ANLA_0" allowfullscreen></iframe>
 
 </div>
+
+</section>
+
+
+<section id="gallery" class="section">
+
+<h2>Photo Gallery</h2>
+
+<div id="gallery-grid" class="gallery-grid"></div>
+
+<p class="gallery-help">
+Add images into the <strong>/photos</strong> folder and list them in <strong>photos.json</strong>.
+</p>
 
 </section>
 
@@ -61,20 +67,21 @@
 
 <h2>Bookings</h2>
 
-<p>Email: kinglouieband@outlook.com</p>
+<p>
+<a class="email-link" href="mailto:kinglouieband@outlook.com">
+kinglouieband@outlook.com
+</a>
+</p>
 
 </section>
 
 
 <footer>
-
 <p>© King Louie</p>
-
 </footer>
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
