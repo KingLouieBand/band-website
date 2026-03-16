@@ -1,50 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>The Rusty Strings</title>
+
+<title>King Louie | Pub Rock Band</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <header>
-<h1>The Rusty Strings</h1>
-<p>Pub Rock | Hampshire</p>
+
+<img src="images/logo.png" class="logo">
+
+<p class="tagline">Pub Rock • Hampshire</p>
+
 </header>
 
-<section>
+
+<section class="gigs">
+
 <h2>Upcoming Gigs</h2>
-<ul id="gigs"></ul>
+
+<ul id="giglist"></ul>
+
 </section>
 
-<section>
-<h2>Videos</h2>
+
+<section class="video">
+
+<h2>Live Video</h2>
+
 <iframe width="560" height="315"
-src="https://www.youtube.com/embed/VIDEOID"
-frameborder="0" allowfullscreen></iframe>
+src="https://www.youtube.com/embed/YOUTUBEID"
+frameborder="0"
+allowfullscreen></iframe>
+
 </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: bookings@yourband.com</p>
+
+<section class="contact">
+
+<h2>Bookings</h2>
+
+<p>booking@kinglouieband.co.uk</p>
+
 </section>
+
+
+<footer>
+
+<p>© King Louie</p>
+
+</footer>
+
 
 <script>
 
 fetch('gigs.json')
 .then(res => res.json())
 .then(data => {
-const list = document.getElementById('gigs');
+
+const list = document.getElementById("giglist")
 
 data.forEach(gig => {
-const li = document.createElement('li');
-li.innerText = gig.date + " - " + gig.venue + " (" + gig.city + ")";
-list.appendChild(li);
-});
 
-});
+const li = document.createElement("li")
+
+li.innerHTML = `<strong>${gig.date}</strong> — ${gig.venue} (${gig.city})`
+
+list.appendChild(li)
+
+})
+
+})
 
 </script>
 
 </body>
+
 </html>
