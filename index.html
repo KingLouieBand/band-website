@@ -1,86 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>King Louie | Pub Rock Band</title>
-
+<title>King Louie | Pub Rock</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-<header>
+<nav>
+<div class="navlogo">KING LOUIE</div>
+<div class="navlinks">
+<a href="#gigs">Gigs</a>
+<a href="#videos">Videos</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-<img src="images/logo.png" class="logo">
+<section class="hero">
+<img src="images/logo.png" class="hero-logo">
+<p class="hero-tag">Pub Rock • Hampshire</p>
+</section>
 
-<p class="tagline">Pub Rock • Hampshire</p>
-
-</header>
-
-
-<section class="gigs">
-
+<section id="gigs" class="section">
 <h2>Upcoming Gigs</h2>
-
 <ul id="giglist"></ul>
-
 </section>
 
-
-<section class="video">
-
-<h2>Live Video</h2>
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/YOUTUBEID"
-frameborder="0"
-allowfullscreen></iframe>
-
+<section id="videos" class="section">
+<h2>Videos</h2>
+<div class="video-grid">
+<iframe src="https://www.youtube.com/embed/VIDEOID1"></iframe>
+<iframe src="https://www.youtube.com/embed/VIDEOID2"></iframe>
+<iframe src="https://www.youtube.com/embed/VIDEOID3"></iframe>
+</div>
 </section>
 
-
-<section class="contact">
-
+<section id="contact" class="section">
 <h2>Bookings</h2>
-
-<p>booking@kinglouieband.co.uk</p>
-
+<p>Email: bookings@kinglouieband.co.uk</p>
 </section>
-
 
 <footer>
-
 <p>© King Louie</p>
-
 </footer>
 
-
-<script>
-
-fetch('gigs.json')
-.then(res => res.json())
-.then(data => {
-
-const list = document.getElementById("giglist")
-
-data.forEach(gig => {
-
-const li = document.createElement("li")
-
-li.innerHTML = `<strong>${gig.date}</strong> — ${gig.venue} (${gig.city})`
-
-list.appendChild(li)
-
-})
-
-})
-
-</script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
