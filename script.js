@@ -81,7 +81,36 @@ photos.forEach(p=>{
 
 const img = document.createElement("img")
 img.src="photos/"+p
+
+img.onclick = () => {
+openLightbox("photos/"+p)
+}
+
 grid.appendChild(img)
+
+})
+
+}
+
+function openLightbox(src){
+
+const lightbox = document.getElementById("lightbox")
+const img = document.getElementById("lightbox-img")
+
+img.src = src
+lightbox.style.display="flex"
+
+}
+
+document.querySelector(".lightbox-close").onclick = () => {
+document.getElementById("lightbox").style.display="none"
+}
+
+document.getElementById("lightbox").onclick = (e) => {
+if(e.target.id==="lightbox"){
+e.target.style.display="none"
+}
+}
 
 })
 
