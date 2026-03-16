@@ -1,98 +1,217 @@
 
-body {
+body{
+
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:black;
 color:white;
+
 }
 
-nav {
+
+nav{
+
 position:fixed;
 top:0;
 width:100%;
 background:rgba(0,0,0,0.9);
 display:flex;
-justify-content:space-between;
-padding:15px 40px;
-z-index:10;
-}
-
-nav a {
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
-
-nav a:hover {
-color:#ff2b2b;
-}
-
-.hero {
-height:100vh;
-display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-background-image:url("images/monkey.png");
-background-size:500px;
-background-repeat:no-repeat;
-background-position:bottom right;
+padding:18px 0;
+z-index:100;
+
 }
 
-.hero-logo {
-max-width:700px;
-width:90%;
-animation:fadein 2s;
-}
+.navlinks{
 
-.hero-tag {
-color:#ff3b3b;
+display:flex;
+gap:40px;
+font-size:18px;
 letter-spacing:2px;
-margin-top:20px;
+
 }
 
-.section {
+nav a{
+
+color:white;
+text-decoration:none;
+transition:0.2s;
+
+}
+
+nav a:hover{
+
+color:#ff2b2b;
+
+}
+
+
+
+.hero{
+
+height:100vh;
+display:grid;
+grid-template-columns:1fr 500px;
+align-items:center;
+padding-top:60px;
+max-width:1200px;
+margin:auto;
+position:relative;
+
+}
+
+/* red stage glow */
+.hero::before{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:radial-gradient(circle at center,
+rgba(255,40,40,0.25),
+transparent 60%);
+
+z-index:-1;
+
+}
+
+/* subtle grunge texture */
+.hero::after{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background-image:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+opacity:0.35;
+
+z-index:-2;
+
+}
+
+.hero-left{
+
+text-align:center;
+
+}
+
+.hero-logo{
+
+width:100%;
+max-width:650px;
+animation:fadein 1.5s;
+
+}
+
+.hero-tag{
+
+color:#ff3b3b;
+letter-spacing:3px;
+margin-top:20px;
+
+}
+
+.hero-monkey{
+
+width:380px;
+justify-self:center;
+
+}
+
+
+.section{
+
 padding:120px 20px;
 text-align:center;
+
 }
 
-h2 {
+h2{
+
 color:#ff3b3b;
 letter-spacing:2px;
+
 }
 
-#giglist {
+#giglist{
+
 list-style:none;
 padding:0;
+
 }
 
-#giglist li {
+#giglist li{
+
 font-size:20px;
 padding:10px;
+
 }
 
-.video-grid {
+.video-grid{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 max-width:1000px;
 margin:auto;
+
 }
 
-.video-grid iframe {
+.video-grid iframe{
+
 width:100%;
 height:200px;
 border:none;
+
 }
 
-footer {
+
+footer{
+
 padding:40px;
 text-align:center;
 color:#666;
+
 }
 
-@keyframes fadein {
-from {opacity:0; transform:translateY(20px);}
-to {opacity:1; transform:translateY(0);}
+@keyframes fadein{
+
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+
+}
+
+
+
+@media (max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+text-align:center;
+padding:120px 20px;
+
+}
+
+.hero-monkey{
+
+margin-top:40px;
+width:260px;
+
+}
+
+.navlinks{
+
+gap:20px;
+font-size:16px;
+
+}
+
 }
