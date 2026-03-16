@@ -1,20 +1,18 @@
 
 KING LOUIE WEBSITE
 
-VIDEOS
-The YouTube videos are already embedded.
-
-ADD PHOTOS
-1. Put images into /photos
-2. Add filenames to photos.json
-
-Example:
-
-"gig1.jpg",
-"gig2.jpg"
+FEATURES
+• Next gig sticky bar
+• Only future gigs shown
+• Gig poster cards
+• Photo gallery from /photos
+• Embedded YouTube videos
 
 ADD GIGS
-Edit gigs.json
+Edit gigs.json using ISO dates:
 
-EMAIL
-Contact email opens mail app using mailto link.
+2026-06-14
+
+ADD PHOTOS
+1. Put image into /photos
+2. Add filename to photos.json

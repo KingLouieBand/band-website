@@ -1,30 +1,64 @@
 
-fetch('gigs.json')
-.then(res=>res.json())
-.then(data=>{
+async function loadGigs(){
 
-const list=document.getElementById("giglist")
+const res = await fetch('gigs.json')
+const gigs = await res.json()
 
-data.forEach(gig=>{
-const li=document.createElement("li")
-li.innerHTML=`<strong>${gig.date}</strong> — ${gig.venue} (${gig.city})`
-list.appendChild(li)
-})
+const now = new Date()
 
-})
+const future = gigs.filter(g=> new Date(g.date) >= now)
+future.sort((a,b)=> new Date(a.date)-new Date(b.date))
 
-fetch('photos.json')
-.then(res=>res.json())
-.then(data=>{
+const list = document.getElementById("giglist")
 
-const gallery=document.getElementById("gallery-grid")
+future.forEach(gig=>{
 
-data.forEach(photo=>{
+const card = document.createElement("div")
+card.className="gig-card"
 
-const img=document.createElement("img")
-img.src="photos/"+photo
-gallery.appendChild(img)
+card.innerHTML=`
+<div class="gig-date">${gig.date}</div>
+<div>${gig.venue}</div>
+<div>${gig.city}</div>
+`
 
-})
+list.appendChild(card)
 
 })
+
+if(future.length>0){
+
+const next = future[0]
+
+document.getElementById("nextGigBar").innerText =
+"NEXT GIG: "+next.date+" – "+next.venue+" ("+next.city+")"
+
+}else{
+
+document.getElementById("nextGigBar").innerText =
+"No upcoming gigs announced yet"
+
+}
+
+}
+
+async function loadPhotos(){
+
+const res = await fetch('photos.json')
+const photos = await res.json()
+
+const grid = document.getElementById("gallery-grid")
+
+photos.forEach(p=>{
+
+const img = document.createElement("img")
+img.src="photos/"+p
+
+grid.appendChild(img)
+
+})
+
+}
+
+loadGigs()
+loadPhotos()
