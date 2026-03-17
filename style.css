@@ -150,22 +150,19 @@ body{
 }
 .lightbox-close:hover{opacity:1}
 
-.email-link{
-  display:inline-block; margin-top:8px;
-  color:var(--accent); text-decoration:none; font-weight:600;
-}
-
 @media (max-width:900px){
   .hero-monkey{ width:200px; right:2%}
 }
 
+.email-link,
 .phone-link{
   display:block;
-  margin-top:8px;
-  color:var(--text);
-  text-decoration:none;
-  font-size:16px;
-  opacity:.85;
+  text-align:left;
+  margin-top:10px;
+}
+
+.phone-link{
+  color:#aaa;
 }
 
 .phone-link:hover{
@@ -197,4 +194,8 @@ body{
   max-width:1100px;
   margin:0 auto;
   padding:0 16px;
+}
+
+body{
+  padding-bottom:80px;
 }
