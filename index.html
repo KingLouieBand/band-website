@@ -3,7 +3,7 @@
 <html>
 <head>
 <base href="/">
-<title>King Louie | Rock Band</title>
+<title>King Louie | Rock Wedding & Function Band</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,56 +11,51 @@
 
 <div id="nextGigBar" class="next-gig-bar"></div>
 
-<nav>
-<div class="navlinks">
-<a href="#gigs">Gigs</a>
-<a href="#videos">Videos</a>
-<a href="#gallery">Photos</a>
-<a href="#contact">Contact</a>
-</div>
+<nav class="nav">
+  <div class="navlinks">
+    <a href="#gigs">Gigs</a>
+    <a href="#videos">Videos</a>
+    <a href="#gallery">Photos</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <section class="hero">
-<div class="overlay"></div>
-
-<div class="hero-content">
-<img src="images/logo.png" class="hero-logo">
-<p class="hero-tag">
-Probably the best band in the world – covering Wiltshire & Hampshire
-</p>
-<div id="countdown" class="countdown"></div>
-</div>
-
-<img src="images/monkey.png" class="hero-monkey">
+  <div class="hero-inner">
+    <img src="images/logo.png" class="hero-logo">
+    <p class="hero-tag">Probably the best band in the world – covering Wiltshire & Hampshire</p>
+    <div id="countdown" class="countdown"></div>
+  </div>
+  <img src="images/monkey.png" class="hero-monkey">
 </section>
 
 <section id="gigs" class="section">
-<h2>UPCOMING GIGS</h2>
-<div id="giglist" class="gig-cards"></div>
+  <h2>Upcoming Gigs</h2>
+  <div id="giglist" class="gig-cards"></div>
 </section>
 
 <section id="videos" class="section">
-<h2>VIDEOS</h2>
-<div class="video-grid">
-<iframe src="https://www.youtube.com/embed/l2LRv33g_PA"></iframe>
-<iframe src="https://www.youtube.com/embed/exjbLTjxL2c"></iframe>
-<iframe src="https://www.youtube.com/embed/fxFY7ANLA_0"></iframe>
-</div>
+  <h2>Videos</h2>
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/l2LRv33g_PA" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/exjbLTjxL2c" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/fxFY7ANLA_0" allowfullscreen></iframe>
+  </div>
 </section>
 
 <section id="gallery" class="section">
-<h2>GALLERY</h2>
-<div id="gallery-grid" class="gallery-grid"></div>
+  <h2>Gallery</h2>
+  <div id="gallery-grid" class="gallery-grid"></div>
 </section>
 
 <div id="lightbox" class="lightbox">
-<span class="lightbox-close">&times;</span>
-<img id="lightbox-img">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img">
 </div>
 
 <section id="contact" class="section">
-<h2>BOOK THE BAND</h2>
-<a href="mailto:kinglouieband@outlook.com">kinglouieband@outlook.com</a>
+  <h2>Bookings</h2>
+  <a class="email-link" href="mailto:kinglouieband@outlook.com">kinglouieband@outlook.com</a>
 </section>
 
 <script src="script.js"></script>
