@@ -142,6 +142,18 @@ html{
 .gig-venue{ color:var(--text)}
 .gig-city{ color:var(--muted); font-size:14px}
 
+.map-link{
+  display:inline-block;
+  margin-top:10px;
+  font-size:13px;
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.map-link:hover{
+  text-decoration:underline;
+}
+
 .video-grid iframe{
   width:100%;
   aspect-ratio:16/9;
@@ -236,6 +248,36 @@ html{
     max-width:90%;
   }
 
+}
+
+.socials{
+  margin-top:24px;
+  display:flex;
+  justify-content:flex-start;   /* aligns with text */
+  align-items:center;
+  gap:20px;
+}
+
+.socials img{
+  width:30px;
+  height:30px;
+  filter:brightness(0) invert(1);
+  opacity:.85;
+  transition:transform .2s ease, opacity .2s ease, filter .2s ease;
+}
+
+.socials img:hover{
+  opacity:1;
+  transform:translateY(-2px) scale(1.1);
+  filter:brightness(0) invert(1) drop-shadow(0 0 6px rgba(255,0,0,.6));
+}
+
+.social-label{
+  margin-top:24px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
 }
 
 .gig-cards{
