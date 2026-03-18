@@ -171,6 +171,12 @@ body{
   filter:brightness(.95);
 }
 
+.gallery-grid img:hover{
+  transform:translateY(-4px) scale(1.03);
+  filter:brightness(1.05);
+  box-shadow:0 12px 30px rgba(255,0,0,.2);
+}
+
 .lightbox{
   display:none; position:fixed; inset:0; z-index:100;
   background:rgba(0,0,0,.92);
