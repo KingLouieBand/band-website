@@ -272,6 +272,14 @@ html{
   filter:brightness(0) invert(1) drop-shadow(0 0 6px rgba(255,0,0,.6));
 }
 
+.social-label{
+  margin-top:24px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+}
+
 .gig-cards{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
