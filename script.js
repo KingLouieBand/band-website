@@ -16,11 +16,14 @@ async function loadGigs(){
 
   future.forEach(g=>{
     const el=document.createElement("div")
+    const mapsQuery = encodeURIComponent(`${g.venue}, ${g.city}`);
+    const mapsLink = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
     el.className="gig-card"
     el.innerHTML=`
       <div class="gig-date">${formatDate(g.date)}</div>
       <div class="gig-venue">${g.venue}</div>
-      <div class="gig-city">${g.city}</div>`
+      <div class="gig-city">${g.city}</div>
+      <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>`
     list.appendChild(el)
   })
 
