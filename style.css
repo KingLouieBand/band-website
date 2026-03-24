@@ -112,13 +112,18 @@ html{
   min-height:80vh;
   display:grid; place-items:center;
   padding:40px 16px;
+  background:radial-gradient(circle at center, rgba(255,0,0,.08), transparent 70%);
 }
 
 .hero::before{
-  content:""; position:absolute; inset:0;
-    background:
-      radial-gradient(500px 250px at 50% 35%, rgba(255,40,40,.45), transparent 65%),
-      radial-gradient(900px 500px at 50% 70%, rgba(255,0,0,.15), transparent 70%);
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(80% 50% at 50% 35%, rgba(255,40,40,.45), transparent 70%),
+    radial-gradient(120% 80% at 50% 70%, rgba(255,0,0,.2), transparent 75%);
+
   pointer-events:none;
 }
 
