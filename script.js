@@ -31,16 +31,21 @@ async function loadGigs(){
     const mapsLink = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
     el.className="gig-card"
     el.innerHTML=`
-      <div class="gig-date">${formatDate(g.date)}</div>
-      ${g.time ? `<div class="gig-time">🕒 ${formatTime(g.time)}</div>` : ""}
-      <div class="gig-venue">${g.venue}</div>
-      <div class="gig-city">${g.city}</div>
+  <div class="gig-date">${formatDate(g.date)}</div>
+  ${g.time ? `<div class="gig-time">🕒 ${formatTime(g.time)}</div>` : ""}
+  <div class="gig-venue">${g.venue}</div>
+  <div class="gig-city">${g.city}</div>
+
+  <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>
+
+  <a href="#" class="calendar-link">📅 Add to Calendar</a>
+`;
+
+el.querySelector(".calendar-link").addEventListener("click", (e) => {
+  e.preventDefault();
+  handleCalendarClick(g);
+});
     
-      <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>
-    
-      <a href="#" onclick='handleCalendarClick(${JSON.stringify(g)})' class="calendar-link">
-  📅 Add to Calendar
-</a>
     list.appendChild(el)
   })
 
