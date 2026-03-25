@@ -36,6 +36,9 @@ async function loadGigs(){
       <div class="gig-venue">${g.venue}</div>
       <div class="gig-city">${g.city}</div>
       <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>`
+      <a href="${createGoogleCalendarLink(g)}" target="_blank" class="calendar-link">
+        ➕ Add to Calendar
+      </a>
     list.appendChild(el)
   })
 
@@ -61,6 +64,21 @@ function startCountdown(target){
   }
   setInterval(update,1000)
   update()
+}
+
+function createGoogleCalendarLink(g){
+  if(!g.date) return "#";
+
+  const start = new Date(g.date + "T" + (g.time || "20:00"));
+  const end = new Date(start.getTime() + (2 * 60 * 60 * 1000)); // +2 hours
+
+  const format = d => d.toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+
+  const dates = `${format(start)}/${format(end)}`;
+  const text = encodeURIComponent(`King Louie @ ${g.venue}`);
+  const location = encodeURIComponent(`${g.venue}, ${g.city}`);
+
+  return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&location=${location}`;
 }
 
 async function loadPhotos(){
