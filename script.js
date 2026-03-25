@@ -32,7 +32,7 @@ async function loadGigs(){
     el.className="gig-card"
     el.innerHTML=`
       <div class="gig-date">${formatDate(g.date)}</div>
-      <div class="gig-time">${formatTime(g.time)}</div>
+      ${g.time ? `<div class="gig-time">🕒 ${formatTime(g.time)}</div>` : ""}
       <div class="gig-venue">${g.venue}</div>
       <div class="gig-city">${g.city}</div>
       <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>`
