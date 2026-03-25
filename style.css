@@ -15,11 +15,31 @@ body{
   background:
   radial-gradient(120% 80% at 50% 0%, rgba(255,40,40,.3), transparent 70%),
   #0b0b0b;
-
+  position:relative; 
   color:var(--text);
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif;
   line-height:1.5;
 }
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+
+  /* subtle noise texture */
+  background-image:url("data:image/svg+xml,\
+<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>\
+<filter id='n'>\
+<feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/>\
+</filter>\
+<rect width='100%' height='100%' filter='url(%23n)' opacity='0.04'/>\
+</svg>");
+
+  mix-blend-mode:overlay;
+}
+
 
 .next-gig-bar{
   position:sticky; top:0; z-index:50;
