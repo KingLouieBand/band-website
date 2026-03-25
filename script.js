@@ -81,6 +81,31 @@ function createGoogleCalendarLink(g){
   return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&location=${location}`;
 }
 
+function downloadICS(g){
+  const start = new Date(g.date + "T" + (g.time || "20:00"));
+  const end = new Date(start.getTime() + (2 * 60 * 60 * 1000));
+
+  const format = d => d.toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+
+  const content = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${format(start)}
+DTEND:${format(end)}
+SUMMARY:King Louie @ ${g.venue}
+LOCATION:${g.venue}, ${g.city}
+END:VEVENT
+END:VCALENDAR`;
+
+  const blob = new Blob([content], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "king-louie-gig.ics";
+  a.click();
+}
+
 async function loadPhotos(){
   const res=await fetch('photos.json')
   const photos=await res.json()
