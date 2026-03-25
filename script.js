@@ -88,14 +88,14 @@ const closeBtn = document.querySelector(".lightbox-close");
 // Open lightbox when clicking gallery image
 document.addEventListener("click", function(e){
   if(e.target.closest("#gallery-grid img")){
-    lightbox.style.display = "flex";
+    lightbox.classList.add("show");
     lightboxImg.src = e.target.src;
   }
 });
 
 // Close when clicking X
 closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
+  lightbox.classList.remove("show");
 });
 
 // Close when clicking outside image
