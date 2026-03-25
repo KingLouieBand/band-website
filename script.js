@@ -4,6 +4,17 @@ function formatDate(dateString){
   return d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})
 }
 
+function formatTime(time){
+  if(!time) return "";
+
+  const [hours, minutes] = time.split(":");
+  const h = parseInt(hours);
+  const ampm = h >= 12 ? "PM" : "AM";
+  const formattedHour = h % 12 || 12;
+
+  return `${formattedHour}:${minutes} ${ampm}`;
+}
+
 async function loadGigs(){
   const res=await fetch('gigs.json')
   const gigs=await res.json()
@@ -21,6 +32,7 @@ async function loadGigs(){
     el.className="gig-card"
     el.innerHTML=`
       <div class="gig-date">${formatDate(g.date)}</div>
+      <div class="gig-time">${formatTime(g.time)}</div>
       <div class="gig-venue">${g.venue}</div>
       <div class="gig-city">${g.city}</div>
       <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>`
