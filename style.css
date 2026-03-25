@@ -171,6 +171,12 @@ html{
 }
 
 .gig-date{ color:#fff; font-weight:600; margin-bottom:6px}
+.gig-time{
+  color:var(--accent);
+  font-size:14px;
+  margin-bottom:6px;
+  font-weight:500;
+}
 .gig-venue{ color:var(--text)}
 .gig-city{ color:var(--muted); font-size:14px}
 
