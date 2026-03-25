@@ -113,6 +113,6 @@ closeBtn.addEventListener("click", () => {
 // Close when clicking outside image
 lightbox.addEventListener("click", (e) => {
   if(e.target === lightbox){
-    lightbox.style.display = "none";
+    lightbox.classList.remove("show");
   }
 });
