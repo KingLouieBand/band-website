@@ -35,7 +35,13 @@ async function loadGigs(){
       ${g.time ? `<div class="gig-time">🕒 ${formatTime(g.time)}</div>` : ""}
       <div class="gig-venue">${g.venue}</div>
       <div class="gig-city">${g.city}</div>
-      <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>`
+    
+      <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>
+    
+      <button onclick='downloadICS(${JSON.stringify(g)})' class="calendar-link">
+        📅 Add to Calendar
+      </button>
+    `
       <a href="${createGoogleCalendarLink(g)}" target="_blank" class="calendar-link">
         ➕ Add to Calendar
       </a>
