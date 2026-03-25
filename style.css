@@ -192,6 +192,21 @@ html{
   text-decoration:underline;
 }
 
+.calendar-link{
+  display:inline-block;
+  margin-top:6px;
+  margin-left:10px;
+  font-size:13px;
+  color:#fff;
+  text-decoration:none;
+  opacity:.8;
+}
+
+.calendar-link:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
 .video-grid iframe{
   width:100%;
   aspect-ratio:16/9;
