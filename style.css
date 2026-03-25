@@ -278,27 +278,6 @@ html{
   .hero-monkey{ width:200px; right:2%}
 }
 
-.email-link,
-.phone-link{
-  display:block;
-  text-align:left;
-  margin-top:10px;
-}
-
-.email-link{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
-
-.phone-link{
-  color:#aaa;
-}
-
-.phone-link:hover{
-  opacity:1;
-}
-
 @media (max-width:900px){
 
   .hero{
@@ -392,4 +371,49 @@ html{
 
 body{
   padding-bottom:120px;
+}
+
+/* CONTACT SECTION IMPROVEMENT */
+
+#contact .container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.contact-card{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+
+  max-width:420px;
+  width:100%;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.email-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+}
+
+.phone-link{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:15px;
+}
+
+.email-link:hover,
+.phone-link:hover{
+  text-decoration:underline;
 }
