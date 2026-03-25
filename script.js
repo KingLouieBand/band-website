@@ -45,9 +45,8 @@ el.querySelector(".calendar-link").addEventListener("click", (e) => {
   e.preventDefault();
   handleCalendarClick(g);
 });
-    
-    list.appendChild(el)
-  })
+
+list.appendChild(el);
 
   if(future.length){
     const next=future[0]
