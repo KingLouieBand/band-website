@@ -79,3 +79,28 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 loadGigs()
 loadPhotos()
+
+// LIGHTBOX FUNCTIONALITY
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+// Open lightbox when clicking gallery image
+document.addEventListener("click", function(e){
+  if(e.target.closest("#gallery-grid img")){
+    lightbox.style.display = "flex";
+    lightboxImg.src = e.target.src;
+  }
+});
+
+// Close when clicking X
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Close when clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
+});
