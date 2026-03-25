@@ -38,13 +38,9 @@ async function loadGigs(){
     
       <a href="${mapsLink}" target="_blank" class="map-link">📍 View Map</a>
     
-      <button onclick='downloadICS(${JSON.stringify(g)})' class="calendar-link">
-        📅 Add to Calendar
-      </button>
-    `
-      <a href="${createGoogleCalendarLink(g)}" target="_blank" class="calendar-link">
-        ➕ Add to Calendar
-      </a>
+      <a href="#" onclick='handleCalendarClick(${JSON.stringify(g)})' class="calendar-link">
+  📅 Add to Calendar
+</a>
     list.appendChild(el)
   })
 
@@ -112,6 +108,21 @@ END:VCALENDAR`;
   a.click();
 }
 
+function handleCalendarClick(g){
+  const ua = navigator.userAgent.toLowerCase();
+
+  const isIOS = /iphone|ipad|macintosh/.test(ua) && 'ontouchend' in document;
+  const isAndroid = /android/.test(ua);
+
+  if(isIOS){
+    // Apple devices → download ICS
+    downloadICS(g);
+  } else {
+    // Everything else → Google Calendar
+    window.open(createGoogleCalendarLink(g), "_blank");
+  }
+}
+  
 async function loadPhotos(){
   const res=await fetch('photos.json')
   const photos=await res.json()
