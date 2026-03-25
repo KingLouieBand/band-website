@@ -47,7 +47,7 @@ el.querySelector(".calendar-link").addEventListener("click", (e) => {
 });
 
 list.appendChild(el);
-
+  });
   if(future.length){
     const next=future[0]
     document.getElementById("nextGigBar").innerText=
